@@ -40,7 +40,7 @@ Please note that this repository is an extension of [Datasharing](https://gitlab
   ```shell
   # docker rmi datasharing/"your_party_name"_basicinfo # (uncomment this line if you built this image before)
 
-  docker build -t datasharing/"your_party_name"_basicinfo .
+  docker build -t datasharing/*your_party_name*_basicinfo .
   ```
 
 3. To configure what information you want to extract, please edit **request.json** file. 
@@ -74,7 +74,7 @@ Please note that this repository is an extension of [Datasharing](https://gitlab
    docker run --rm --add-host dockerhost:192.168.65.2 \
    -v "$(pwd)/request.json:/request.json" \
    -v "$(pwd)/Diabetes_PartA.csv:/Diabetes_PartA.csv" \
-   -v "$(pwd)/output:/output" datasharing/"your_party_name"_basicinfo
+   -v "$(pwd)/output:/output" datasharing/*your_party_name*_basicinfo
    ```
 
    - Windows:
@@ -83,7 +83,7 @@ Please note that this repository is an extension of [Datasharing](https://gitlab
    docker run --rm --add-host dockerhost:10.0.75.1 \
    -v "%cd%/request.json:/request.json" \
    -v "%cd%/Diabetes_PartA.csv:/Diabetes_PartA.csv" \
-   -v "%cd%/output:/output" datasharing/"your_party_name"_basicinfo
+   -v "%cd%/output:/output" datasharing/*your_party_name*_basicinfo
    ```
 
 5. You will see all results in the output folder.
@@ -101,7 +101,7 @@ Please note that this repository is an extension of [Datasharing](https://gitlab
   ```shell
   # docker rmi datasharing/"your_party_name"_enc #(uncomment this line if you built this image before)
 
-  docker build -t datasharing/"your_party_name"_enc .
+  docker build -t datasharing/*your_party_name*_enc .
   ```
 
 
@@ -155,7 +155,7 @@ docker run --rm -p 5001:5001 -v "%cd%/storage:/storage" fileservice
    docker run --rm --add-host dockerhost:192.168.65.2 \
    -v "$(pwd)/Diabetes_PartA.csv:/Diabetes_PartA.csv" \
    -v "$(pwd)/input.json:/input.json" \
-   -v "$(pwd)/encryption:/encryption" datasharing/"your_party_name"_enc
+   -v "$(pwd)/encryption:/encryption" datasharing/*your_party_name*_enc
    ```
 
    - Windows
@@ -164,7 +164,7 @@ docker run --rm -p 5001:5001 -v "%cd%/storage:/storage" fileservice
    docker run --rm --add-host dockerhost:10.0.75.1 \
    -v "%cd%/Diabetes_PartA.csv:/Diabetes_PartA.csv" \
    -v "%cd%/input.json:/input.json" \
-   -v "%cd%/encryption:/encryption" datasharing/"your_party_name"_enc
+   -v "%cd%/encryption:/encryption" datasharing/*your_party_name*_enc
    ```
 
      A **your_party_name_key.json** file will be generated in a new **encryption** folder. It contains: UUID of data file, verify key, and encryption key. These keys need to be send to TSE
@@ -234,6 +234,14 @@ docker run --rm --add-host dockerhost:10.0.75.1 \
 ```
 
 4. All results are generated at TSE Output folder.  
+
+## Data information ##
+
+We used two public data sets to simulate real-life case for party A and party B
+
+Data source for party A: https://archive.ics.uci.edu/ml/datasets/diabetes+130-us+hospitals+for+years+1999-2008 
+
+Data source for party B: https://www.vektis.nl/intelligence/open-data 
 
 ## Contact ##
 
