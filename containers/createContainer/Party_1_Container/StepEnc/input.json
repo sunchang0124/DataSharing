@@ -1,0 +1,4 @@
+{   "party_name": "party_1",
+    "data_file": "Diabetes_PartA.csv", 
+    "salt_text": "peach", 
+    "id_feature": ["housenum", "zipcode", "date_of_birth", "sex"]}

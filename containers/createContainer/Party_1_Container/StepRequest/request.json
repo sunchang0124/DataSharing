@@ -1,0 +1,23 @@
+{
+    "data_file": "Diabetes_PartA.csv",
+
+    "selected_features": "ALL",
+
+    "check_missing": true,
+
+    "data_description": true,
+
+    "correlation_matrix": true,
+
+    "distribution_plot": true,
+    "distribution_feature": "ALL",
+
+    "Box_plot": true,
+    "Box_plot_feature":[["admission_type_id","num_lab_procedures","readmitted_new"]],
+
+    "Cat_Num_plot": true,
+    "Cat_Num_feature":[["admission_type_id","num_medications","readmitted_new"]],
+
+    "Num_Num_Plot": true,
+    "Num_Num_feature":[["num_lab_procedures","num_medications","readmitted_new"]]
+}

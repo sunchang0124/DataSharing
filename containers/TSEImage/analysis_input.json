@@ -1,0 +1,33 @@
+
+{   
+    "taskName": ["basic", "regression", "classification"],
+
+    "check_missing": [true,false,false],
+
+    "correlation_matrix": [true,false,false],
+
+    "Box_plot": [true,false,false],
+    "Box_plot_feature":[[["admission_type_id","num_lab_procedures","readmitted_new"]]],
+
+    "Cat_Num_plot": [true,false,false],
+    "Cat_Num_feature":[[["admission_type_id","num_lab_procedures","readmitted_new"]]],
+
+    "Num_Num_Plot": [true,false,false],
+    "Num_Num_feature":[[["num_lab_procedures","num_lab_procedures","readmitted_new"]]],
+
+    "task": [false, "regression","classification"],
+
+    "model": [false, "linear regression","logistic regression"], 
+    "parameters": [false, {"fit_intercept":true, "normalize":false, "copy_X":true}, 
+        {"class_weight":"balanced", "solver":"liblinear", "max_iter":500}],
+
+    "training_features":[false, ["admission_type_id","num_lab_procedures","readmitted_new"], 
+    ["admission_type_id","num_lab_procedures"]], 
+
+    "target_feature":[false, "KOSTEN_FARMACIE", "readmitted_new"], 
+
+    "evaluation_methods": [false, ["neg_mean_absolute_error","neg_mean_squared_error","neg_mean_squared_log_error","r2"],
+    ["precision","recall","f1","roc_auc"]], 
+
+    "k_fold": [false, 10,10]
+}
