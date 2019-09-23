@@ -223,7 +223,7 @@ def box_Plot(df, featureSet, file):
 ##########################################
 ### Function for plotting Stacked Area ###
 ##########################################
-def stacked_Plot(df,year):
+def stacked_Plot(df,ageRange,year):
     N = len(df.columns)
 
     names = ["%s" % i for i in df.columns]
@@ -235,8 +235,8 @@ def stacked_Plot(df,year):
                   legend=[value(x) for x in names], source=df)
 
     p.legend.location = "top_left"
-    p.x_range.start = 0
-    p.x_range.end = 90
+    p.x_range.start = ageRange[0]
+    p.x_range.end = ageRange[-1]
     p.xaxis.axis_label = 'Age'
     p.yaxis.axis_label = 'Total healthcare cost in %s' %year
     # reverse the legend entries to match the stacked order
