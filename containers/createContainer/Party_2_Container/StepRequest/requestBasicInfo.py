@@ -82,6 +82,6 @@ if input['stacked_area'] == True:
         df_stack[i] = df_avg.mean(axis=0, skipna=True)
         df_stack_trans = df_stack.transpose()
         df_stack_trans = func.merge(df_stack_trans)
-        func.stacked_Plot(df_stack_trans, year)
+    func.stacked_Plot(df_stack_trans, year)
     print('Stacked Area plot is done')
 
